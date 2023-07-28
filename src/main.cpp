@@ -10,9 +10,6 @@
 #include <src/sdk/natives.h>
 
 // Created with ReClass.NET 1.2 by KN4CK3R
-
-// Created with ReClass.NET 1.2 by KN4CK3R
-
 class GameObject;
 class BaseObject
 {
@@ -119,21 +116,8 @@ vector get_position( uint64_t transform_internal )
 }
 */
 
-struct balls
-{
-	int e;
-
-	void method( )
-	{
-		;;
-	}
-};
-
-
 int main()
 {
-	struct balls a;
-
 	util::attach(L"RustClient.exe");
 	il2cpp::init( );
 
@@ -144,7 +128,6 @@ int main()
 	auto inventory = localplayer->inventory( );
 	auto belt = inventory->belt( );
 
-	
 	for ( int i = 0; i < belt->capacity( ); ++i )
 	{
 		auto item = belt->item( i );
@@ -159,7 +142,6 @@ int main()
 	}
 	
 	std::wcout << L"[offset less player name $$$$] " << localplayer->display_name( ).buffer << '\n';
-
 	while (true)
 	{
 		if ( GetAsyncKeyState( VK_END ) & 1 )
@@ -179,7 +161,7 @@ int main()
 			auto name = item->name( ).buffer;
 			auto desc = item->description( ).buffer;
 
-			if (name && desc )
+			if ( name && desc )
 				std::wcout << name << L"\n\t" << desc << L"\n\n";
 		}
 		std::this_thread::sleep_for( std::chrono::milliseconds( 1000 ) );
